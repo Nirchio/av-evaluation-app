@@ -1,15 +1,16 @@
+// src/App.tsx
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AVTestingApp from "./AVTestingApp";
 import EvaluationPage from "./EvaluationPage";
 import SettingsPage from "./SettingsPage";
+import SettingsLoginPage from "./SettingsLoginPage";
 import BenchmarkPage from "./BenchmarkPage";
 import HistoryPage from "./HistoryPage";
-import SettingsLoginPage from "./SettingsLoginPage";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes>
         <Route path="/" element={<AVTestingApp />} />
         <Route path="/evaluate" element={<EvaluationPage />} />
